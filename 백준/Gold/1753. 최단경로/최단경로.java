@@ -16,27 +16,27 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int V = Integer.parseInt(st.nextToken()); //정점
-        int E = Integer.parseInt(st.nextToken()); //간선
-        int K = Integer.parseInt(br.readLine()); // 정점 시작 번호
-        boolean[] visited = new boolean[V+1]; //방문 처리
-        int[] result = new int[V+1]; //최단 경로 값 저장
-        List<Node>[] list = new List[V+1]; //연결 정보 저장
+        int V = Integer.parseInt(st.nextToken());
+        int E = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(br.readLine());
+        boolean[] visited = new boolean[V+1];
+        int[] result = new int[V+1];
+        List<Node>[] list = new List[V+1];
 
-        for(int i=1; i<=V; i++) { //list, result 초기화
+        for(int i=1; i<=V; i++) {
             list[i] = new ArrayList<>();
             result[i] = Integer.MAX_VALUE;
         }
         for(int i=0; i<E; i++) {
             st = new StringTokenizer(br.readLine());
-            int u = Integer.parseInt(st.nextToken()); //출발
-            int v = Integer.parseInt(st.nextToken()); //도착
-            int w = Integer.parseInt(st.nextToken()); //가중치
+            int u = Integer.parseInt(st.nextToken());
+            int v = Integer.parseInt(st.nextToken());
+            int w = Integer.parseInt(st.nextToken());
 
             list[u].add(new Node(v,w));
         }
 
-        PriorityQueue<Node> pq = new PriorityQueue<>((n1, n2)->n1.weight-n2.weight);
+        PriorityQueue<Node> pq = new PriorityQueue<>();
         result[K] = 0;
         pq.add(new Node(K,0));
 
