@@ -13,12 +13,13 @@ public class Main {
             arr[i][1] = Integer.parseInt(st.nextToken());
         }
         for(int i=0; i<n; i++) {
-            int rank = 0;
+            int rank = 1;
             for(int j=0; j<n; j++) {
+                if(i==j) continue;
                 if(arr[i][0]<arr[j][0] && arr[i][1]<arr[j][1])
                     rank++;
             }
-            sb.append((rank+1)+" ");
+            sb.append(rank+" ");
         }
         System.out.println(sb);
     }
