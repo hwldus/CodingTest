@@ -18,7 +18,7 @@ public class Main {
                    arr[j]=0;
                    Arrays.sort(arr);
                    for(int k=2; k<9; k++) {
-                       sb.append(arr[k] + "\n");
+                       sb.append(arr[k]).append("\n");
                    }
                    System.out.println(sb);
                    return;
