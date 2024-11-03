@@ -45,6 +45,6 @@ public class Main {
                 }
             }
         }
-        return second;
+        return -1;
     }
 }
