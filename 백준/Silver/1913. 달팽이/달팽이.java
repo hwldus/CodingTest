@@ -3,8 +3,6 @@ import java.io.*;
 public class Main {
     static int[][] map;
     static int n, k, targetX, targetY;
-    static int[] dx = {-1,0,1,0}; //위,오,아래,왼(좌표기준)
-    static int[] dy = {0,1,0,-1};
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         n = Integer.parseInt(br.readLine());
